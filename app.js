@@ -1,5 +1,5 @@
 const express = require('express')
-// const cors = require('cors');
+const cors = require('cors');
 const app = express();
 
 const PORT = process.env.PORT || 3000;
@@ -9,10 +9,14 @@ const connectDb = require('./db/connect')
 require('dotenv').config()
 
 app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'http://localhost:3001/Freedomwall')
     res.header('Access-Control-Allow-Origin', '*')
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 
 
+    if (req.method === 'OPTIONS') {
+        res.header('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE')
+        return res.status(200).json({})
+    }
     next();
 });
 
