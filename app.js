@@ -25,7 +25,7 @@ const router = require('./routes/crud')
 
 app.use(express.json())
 app.use(cors({
-    origin: 'https://freedom-wall1337.herokuapp.com/'
+    origin: 'https://freedom-wall1337.herokuapp.com/Freedomwall'
 }))
 
 
