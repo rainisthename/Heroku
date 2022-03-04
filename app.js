@@ -9,13 +9,10 @@ const connectDb = require('./db/connect')
 require('dotenv').config()
 
 app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'https://freedom-wall1337.herokuapp.com/Freedomwall')
+    res.header('Access-Control-Allow-Origin', 'http://localhost:3001/Freedomwall')
     res.header('Access-Control-Allow-Origin', '*')
 
-    if (req.method === 'OPTIONS') {
-        res.header('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE')
-        return res.status(200).json({})
-    }
+
     next();
 });
 
