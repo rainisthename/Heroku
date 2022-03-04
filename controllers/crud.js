@@ -54,5 +54,5 @@ const createData = async (req, res) => {
 // }
 
 module.exports = {
-    getAllData,getOneItem,deleteData,createData
+    getAllData,createData
 }
