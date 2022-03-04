@@ -1,7 +1,8 @@
 const express = require('express')
 const cors = require('cors');
 const app = express();
-const port = 5000;
+
+const PORT = process.env.PORT || 3000;
 const connectDb = require('./db/connect')
 ///Require DOTENV
 
@@ -37,8 +38,8 @@ app.use('/api/v1/crud', router)
 const start = async () =>{
     try {
         await connectDb(process.env.MONGO_CONNECT);
-        app.listen(port,(req, res) =>{
-            console.log('You are listening to port :', port);
+        app.listen(PORT,(req, res) =>{
+            console.log('You are listening to port :', PORT);
         })
     } catch (error) {
         console.log(error);
