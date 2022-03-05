@@ -11,6 +11,7 @@ const CrudSchema = new mongoose.Schema({
     },
     comment: {
         type: String, 
+        maxlength: [200, 'Name must be less than 200 characters'],
         completed: {
             type: Boolean,
             default: false,
